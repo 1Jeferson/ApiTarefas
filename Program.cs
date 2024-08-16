@@ -15,6 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<SistemaTarefasDBContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<ITarefaRepository, TarefaRespository>();
 
 var app = builder.Build();
 
